@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>Actual Bitcoin price</title>
+    </head>
+    <body>
+        <h1>Actual Bitcoin price</h1>
+        <h2>USD: {{priceUSD}}</h2>
+        <h2>EUR: {{priceEUR}}</h2>
+        <p>Price update in <span id="time">30</span> seconds</p>
+
+        <script type="text/javascript">
+            function countdown() {
+                setTimeout(function() {
+                    document.getElementById('time').innerHTML -= 1;
+
+                    if(document.getElementById('time').innerHTML < 1) {
+                        window.location.reload();
+                    }
+                    countdown();
+                }, 1000);
+            }
+
+            countdown();
+        </script>
+    </body>
+</html>
